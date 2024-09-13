@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Información del Empleado</title>
+    </head>
+    <body>
+        <h1>Información del Empleado</h1>
+
+        <header>
+            <div class="menu">
+                <div class="navbg">
+                    <a href="empleados.html">
+                    </a>
+                    <nav class="Baner-Principal">
+                        <ul class="Baner-Principal">
+                            <li>
+                                <a href="">Empleados</a>
+                            </li>
+                            <li>
+                                <a href="historial">Historial</a>
+                            </li>
+                            <li>
+                                <a href="reportes.html">Reportes</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <td th:text="${empleado.employeeId}"></td>
+        <td th:text="${empleado.firstName}"></td>
+        <td th:text="${empleado.lastName}"></td>
+        <td th:text="${empleado.phone_number}"></td>
+        <td th:text="${empleado.salary}"></td>
+        <td th:text="${empleado.department}"></td>
+        <td th:text="${empleado.job_title}"></td>
+
+        <p><strong>Nombre:</strong> <span th:text="${employee.firstName}"></span></p>
+        <p><strong>Apellido:</strong> <span th:text="${employee.lastName}"></span></p>
+        <p><strong>Teléfono:</strong> <span th:text="${employee.phone_number}"></span></p>
+        <p><strong>Salario:</strong> <span th:text="${employee.salary}"></span></p>
+        <p><strong>Departamento:</strong> <span th:text="${employee.departmentName}"></span></p>
+        <p><strong>Ciudad:</strong> <span th:text="${employee.jobTitle}"></span></p>
+
+        <p><strong>Trabajo:</strong></p>
+        <select name="job">
+            <option th:each="job : ${listaTrabajos}" th:value="${job.jobId}" th:text="${job.jobTitle}"></option>
+        </select>
+
+        <br><br>
+        <button type="submit" class="btn btn-primary">Guardar </button>
+        <button onclick="window.history.back()">Cancelar</button>
+    </body>
+</html>

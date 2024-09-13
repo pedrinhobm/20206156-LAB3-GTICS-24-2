@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Historial de Empleados</title>
+
+    </head>
+    <body>
+        <h1>Historial de Empleados</h1>
+
+        <table border="1">
+
+            <header>
+                <div class="menu">
+                    <div class="navbg">
+                        <a href="historial.html">
+                        </a>
+                        <nav class="Baner-Principal">
+                            <ul class="Baner-Principal">
+                                <li>
+                                    <a href="empleados.html">Empleados</a>
+                                </li>
+                                <li>
+                                    <a href="">Historial</a>
+                                </li>
+                                <li>
+                                    <a href="reportes.html">Reportes</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <thead>
+                <tr>
+
+                    <th>Nombre Completo</th>>
+                    <th>Puesto</th>
+                    <th>Departamento</th>
+                    <th>Fecha de inicio en el puesto</th>
+                    <th>Fecha de fin en el puesto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="empleado : ${listaEmpleados}">
+                    <td th:text="${empleado.firstName}"></td>
+                    <td th:text="${empleado.jobTitle}"></td>
+                    <td th:text="${empleado.department}"></td>
+                    <td th:text="${empleado.startDate}"></td>
+                    <td th:text="${empleado.endDate}"></td>
+
+                </tr>
+            </tbody>
+        </table>
+
+
+    </body>
+</html>
+
